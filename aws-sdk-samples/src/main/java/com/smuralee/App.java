@@ -10,9 +10,9 @@ public class App {
         // To be used only for testing from localhost
         // Populate with the values from the IAM
 
-        System.setProperty("aws.accessKeyId", "");
-        System.setProperty("aws.secretAccessKey", "");
-        System.setProperty("aws.sessionToken", "");
+        // System.setProperty("aws.accessKeyId", "");
+        // System.setProperty("aws.secretAccessKey", "");
+        // System.setProperty("aws.sessionToken", "");
 
         // Setting the DNS TTL since Java caches it during start-up
         java.security.Security.setProperty("networkaddress.cache.ttl", "60");
