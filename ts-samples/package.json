@@ -1,0 +1,19 @@
+{
+  "name": "ts-samples",
+  "version": "1.0.0",
+  "description": "Typescript code samples",
+  "license": "Apache-2.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/smuralee/code-samples.git"
+  },
+  "scripts": {
+    "build": "tsc",
+    "start": "node src/index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "dependencies": {
+    "typescript": "^3.7.4"
+  }
+}
