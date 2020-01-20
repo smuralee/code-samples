@@ -1,25 +1,22 @@
 package com.smuralee;
 
-import org.junit.jupiter.api.*;
+import lombok.extern.slf4j.Slf4j;
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Test;
 
+
+@Slf4j
 class AppTest {
 
     @BeforeAll
     static void setUp() {
-        App.setCredentials();
+        log.info("Setting up the test data in @BeforeAll");
     }
 
     @Test
-    @Disabled
-    @DisplayName("Test the AWS credentials are not null or empty")
-    void setCredentials() {
-        String accessId = System.getProperty("aws.accessKeyId");
-        String accessKey = System.getProperty("aws.secretAccessKey");
-        String sessionToken = System.getProperty("aws.sessionToken");
-
-        Assertions.assertNotNull(accessId);
-        Assertions.assertNotNull(accessKey);
-        Assertions.assertNotNull(sessionToken);
-
+    @DisplayName("Test the message is printed")
+    void printMessage() {
+        log.info("The message is printed!!!");
     }
 }

@@ -3,19 +3,12 @@
  */
 package com.smuralee;
 
+import lombok.extern.slf4j.Slf4j;
+
+@Slf4j
 public class App {
 
-    public static void setCredentials() {
-
-        // To be used only for testing from localhost
-        // Populate with the values from the IAM
-
-        // System.setProperty("aws.accessKeyId", "");
-        // System.setProperty("aws.secretAccessKey", "");
-        // System.setProperty("aws.sessionToken", "");
-
-        // Setting the DNS TTL since Java caches it during start-up
-        java.security.Security.setProperty("networkaddress.cache.ttl", "60");
-
+    void printMessage(){
+        log.info("Welcome to DSA examples using Java!!!");
     }
 }
