@@ -1,3 +1,3 @@
 # Code Samples
 
-Examples depicting DSA, Domain Driven Design and S.O.L.I.D principles
+Data Structures and Algorithms using C and Python
