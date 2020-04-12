@@ -1,3 +1,9 @@
 # DSA Samples
 
-Data Structures and Algorithms using C and Python
+Data Structures and Algorithms using Java and Python
+
+## Tenets
+
+* Understand what problem the data structure or algorithm is solving
+* Focus is to improve problem solving skills
+* Do not solve a problem with the coding competition as a target

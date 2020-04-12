@@ -1,0 +1,7 @@
+build/
+.gradle/
+!gradle-wrapper.jar
+
+# IDE ignores
+.idea/
+*.iml
