@@ -1,6 +1,7 @@
 build/
 .gradle/
-!gradle-wrapper.jar
+gradle/
+gradlew*
 
 # IDE ignores
 .idea/
