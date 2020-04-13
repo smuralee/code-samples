@@ -1,6 +1,6 @@
 # DSA Samples
 
-Data Structures and Algorithms using Java and Python
+Data Structures and Algorithms using Java
 
 ## Tenets
 
