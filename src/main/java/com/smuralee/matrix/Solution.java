@@ -108,7 +108,7 @@ public class Solution {
 
         int rows = mat.length;
         int cols = mat[0].length;
-        int previousRowLast;
+        int previousRowLast = 0;
 
         // Loop for executing the one position shift "n" number of times
         for (int count = 1; count <= positions_to_move; count++) {
@@ -123,19 +123,18 @@ public class Solution {
                     // Store the last element of the current row
                     // This is to use in the first column of the next row
                     previousRowLast = mat[i - 1][cols - 1];
-                } else {
-                    // All rows are done, this is to replace the first column element with the last element of the matrix
-                    previousRowLast = lastElement;
                 }
                 for (int j = cols - 1; j >= 0; j--) {
                     if (j > 0) {
                         // Move the previous column's element to the current column's element location
                         mat[i][j] = mat[i][j - 1];
+                    } else {
+                        mat[i][j] = previousRowLast;
                     }
                 }
-                // Store the previous row's last element into the current row's first element
-                mat[i][0] = previousRowLast;
             }
+            // Store the previous row's last element into the current row's first element
+            mat[0][0] = lastElement;
         }
 
         return mat;
