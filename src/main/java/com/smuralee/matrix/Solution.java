@@ -110,6 +110,7 @@ public class Solution {
         int cols = mat[0].length;
         int previousRowLast;
 
+        // Loop for executing the one position shift "n" number of times
         for (int count = 1; count <= positions_to_move; count++) {
 
             // Iterate in reverse, since the last element is the first to displace
@@ -119,21 +120,20 @@ public class Solution {
             // Fill from the last position
             for (int i = rows - 1; i >= 0; i--) {
                 if (i > 0) {
-
                     // Store the last element of the current row
+                    // This is to use in the first column of the next row
                     previousRowLast = mat[i - 1][cols - 1];
                 } else {
-
-                    // All rows are done, this is to replace the first element with the last element
+                    // All rows are done, this is to replace the first column element  with the last element of the matrix
                     previousRowLast = lastElement;
                 }
                 for (int j = cols - 1; j >= 0; j--) {
                     if (j > 0) {
-
-                        // Move the previous location to the current location
+                        // Move the previous column's element to the current column's element location
                         mat[i][j] = mat[i][j - 1];
                     }
                 }
+                // Store the previous row's last element into the current row's first element
                 mat[i][0] = previousRowLast;
             }
         }
