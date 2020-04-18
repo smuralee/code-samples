@@ -58,7 +58,7 @@ public class Solution {
      * @param mat - Matrix to transpose
      * @return - Transposed matrix
      */
-    public int[][] transpose_matrix(int[][] mat) {
+    public int[][] transpose_square_matrix(int[][] mat) {
         int temp;
         for (int i = 0; i < mat.length; i++) {
             for (int j = i + 1; j < mat.length; j++) {
@@ -67,6 +67,45 @@ public class Solution {
                 mat[j][i] = temp;
             }
         }
+        return mat;
+    }
+
+    /**
+     * <p>
+     * Transpose a rectangular matrix
+     * </p>
+     *
+     * @param mat - Matrix to transpose
+     * @return - Transposed matrix
+     */
+    public int[][] transpose_rectangular_matrix(int[][] mat) {
+        int rows = mat.length;
+        int cols = mat[0].length;
+
+        // Building a new transpose matrix
+        int[][] tMat = new int[cols][rows];
+
+        // Swap the values
+        for (int i = 0; i < cols; i++) {
+            for (int j = 0; j < rows; j++) {
+                tMat[i][j] = mat[j][i];
+            }
+        }
+
+        return tMat;
+    }
+
+    /**
+     * <p>
+     * Move the matrix elements ahead depending on the iteration count
+     * </p>
+     *
+     * @param mat   - Matrix to be moved
+     * @param count - Iteration count for the matrix elements
+     * @return - Moved matrix
+     */
+    public int[][] move_matrix(int[][] mat, int count) {
+        //TODO: Implementation pending
         return mat;
     }
 }

@@ -39,8 +39,8 @@ class SolutionTest {
     }
 
     @Test
-    @DisplayName("GIVEN a matrix, THEN transpose the matrix")
-    void transpose_matrix() {
+    @DisplayName("GIVEN a square matrix, THEN transpose the matrix")
+    void transpose_square_matrix() {
 
         int[][] given = new int[][]{
                 {1, 2, 3, 11},
@@ -55,7 +55,51 @@ class SolutionTest {
                 {11, 14, 17, 40}
         };
 
-        int[][] response = solution.transpose_matrix(given);
+        int[][] response = solution.transpose_square_matrix(given);
+        assertArrayEquals(expected, response);
+    }
+
+    @Test
+    @DisplayName("GIVEN a rectangular matrix, THEN transpose the matrix")
+    void transpose_rectangular_matrix() {
+
+        int[][] given = new int[][]{
+                {1, 2, 3, 11},
+                {4, 5, 6, 14},
+                {7, 8, 9, 17},
+        };
+        int[][] expected = new int[][]{
+                {1, 4, 7},
+                {2, 5, 8},
+                {3, 6, 9},
+                {11, 14, 17}
+        };
+
+        int[][] response = solution.transpose_rectangular_matrix(given);
+        assertArrayEquals(expected, response);
+    }
+
+    @Test
+    @DisplayName("GIVEN a matrix and an iteration count, THEN move each element ahead")
+    void move_matrix() {
+        int[][] given = new int[][]{
+                {1, 2, 3, 4},
+                {5, 6, 7, 8},
+                {9, 10, 11, 12},
+                {13, 14, 15, 16},
+                {17, 18, 19, 20}
+        };
+        int count = 2;
+
+        int[][] expected = new int[][]{
+                {19, 20, 1, 2},
+                {3, 4, 5, 6},
+                {7, 8, 9, 10},
+                {11, 12, 13, 14},
+                {15, 16, 17, 18}
+        };
+
+        int[][] response = solution.move_matrix(given, count);
         assertArrayEquals(expected, response);
     }
 }
