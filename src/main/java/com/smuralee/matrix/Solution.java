@@ -16,17 +16,17 @@ public class Solution {
      * Initializing with i=1 since we need the index is, row.length -1<br/>
      * </p>
      *
-     * @param mat - matrix for flipping
-     * @return the matrix after horizontal flip
+     * @param mat - Matrix for horizontal flip
+     * @return Matrix after horizontal flip
      */
     public int[][] flip_matrix_horizontally(int[][] mat) {
 
-        int tempVar;
+        int temp;
         for (int[] row : mat) {
             for (int i = 1; i <= row.length / 2; i++) {
-                tempVar = row[row.length - i];
+                temp = row[row.length - i];
                 row[row.length - i] = row[i - 1];
-                row[i - 1] = tempVar;
+                row[i - 1] = temp;
             }
         }
         return mat;
@@ -55,16 +55,16 @@ public class Solution {
      * The elements to transpose are to the right and bottom of i=j <br/>
      * So we flip [i][j] = [j][i]<br/>
      *
-     * @param mat - Given matrix to transpose
+     * @param mat - Matrix to transpose
      * @return - Transposed matrix
      */
     public int[][] transpose_matrix(int[][] mat) {
-        int tempVar;
+        int temp;
         for (int i = 0; i < mat.length; i++) {
             for (int j = i + 1; j < mat.length; j++) {
-                tempVar = mat[i][j];
+                temp = mat[i][j];
                 mat[i][j] = mat[j][i];
-                mat[j][i] = tempVar;
+                mat[j][i] = temp;
             }
         }
         return mat;
