@@ -100,12 +100,46 @@ public class Solution {
      * Move the matrix elements ahead depending on the iteration count
      * </p>
      *
-     * @param mat   - Matrix to be moved
-     * @param count - Iteration count for the matrix elements
+     * @param mat               - Matrix to be moved
+     * @param positions_to_move - Positions to move for the matrix elements
      * @return - Moved matrix
      */
-    public int[][] move_matrix(int[][] mat, int count) {
-        //TODO: Implementation pending
+    public int[][] move_matrix(int[][] mat, int positions_to_move) {
+
+        int rows = mat.length;
+        int cols = mat[0].length;
+        int previousRowLast;
+
+        for (int count = 1; count <= positions_to_move; count++) {
+
+            // Iterate in reverse, since the last element is the first to displace
+            // Store the last element of the matrix
+            int lastElement = mat[rows - 1][cols - 1];
+
+            // Fill from the last position
+            for (int i = rows - 1; i >= 0; i--) {
+                if (i > 0) {
+
+                    // Store the last element of the current row
+                    previousRowLast = mat[i - 1][cols - 1];
+                } else {
+
+                    // All rows are done, this is to replace the first element with the last element
+                    previousRowLast = lastElement;
+                }
+                for (int j = cols - 1; j >= 0; j--) {
+                    if (j > 0) {
+
+                        // Move the previous location to the current location
+                        mat[i][j] = mat[i][j - 1];
+                    }
+                }
+                mat[i][0] = previousRowLast;
+            }
+        }
+
         return mat;
     }
+
+
 }

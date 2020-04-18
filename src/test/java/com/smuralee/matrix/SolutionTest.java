@@ -80,7 +80,7 @@ class SolutionTest {
     }
 
     @Test
-    @DisplayName("GIVEN a matrix and an iteration count, THEN move each element ahead")
+    @DisplayName("GIVEN a matrix and a number of positions to move, THEN move each element ahead")
     void move_matrix() {
         int[][] given = new int[][]{
                 {1, 2, 3, 4},
@@ -89,7 +89,7 @@ class SolutionTest {
                 {13, 14, 15, 16},
                 {17, 18, 19, 20}
         };
-        int count = 2;
+        int positions_to_move = 2;
 
         int[][] expected = new int[][]{
                 {19, 20, 1, 2},
@@ -99,7 +99,7 @@ class SolutionTest {
                 {15, 16, 17, 18}
         };
 
-        int[][] response = solution.move_matrix(given, count);
+        int[][] response = solution.move_matrix(given, positions_to_move);
         assertArrayEquals(expected, response);
     }
 }
