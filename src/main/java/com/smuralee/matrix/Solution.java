@@ -97,7 +97,7 @@ public class Solution {
 
     /**
      * <p>
-     * Move the matrix elements ahead depending on the iteration count
+     * Move the matrix elements ahead depending on the position shift requested
      * </p>
      *
      * @param mat               - Matrix to be moved
@@ -124,7 +124,7 @@ public class Solution {
                     // This is to use in the first column of the next row
                     previousRowLast = mat[i - 1][cols - 1];
                 } else {
-                    // All rows are done, this is to replace the first column element  with the last element of the matrix
+                    // All rows are done, this is to replace the first column element with the last element of the matrix
                     previousRowLast = lastElement;
                 }
                 for (int j = cols - 1; j >= 0; j--) {
