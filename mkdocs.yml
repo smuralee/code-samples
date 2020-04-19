@@ -1,0 +1,14 @@
+site_name: Data structures and Algorithms
+site_description: DSA code samples and explanation
+site_author: 'Suraj Muraleedharan'
+docs_dir: 'docs'
+repo_name: 'smuralee/dsa-samples'
+repo_url: 'https://github.com/smuralee/dsa-samples'
+nav:
+  - Home: index.md
+  - Data Structures:
+      - Matrix: data-structures/matrix.md
+  - Algorithms:
+      - Searching: algorithms/searching.md
+theme:
+  name: 'material'
