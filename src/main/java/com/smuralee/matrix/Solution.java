@@ -108,32 +108,37 @@ public class Solution {
 
         int rows = mat.length;
         int cols = mat[0].length;
-        int previousRowLast = 0;
+        int previousRowLastElement = 0;
 
         // Loop for executing the one position shift "n" number of times
         for (int count = 1; count <= positions_to_move; count++) {
 
             // Iterate in reverse, since the last element is the first to displace
-            // Store the last element of the matrix
+            // Store the last element [mxn] of the matrix
+            // This is the first element to be displaced and will be used to move to [0x0] position
             int lastElement = mat[rows - 1][cols - 1];
 
             // Fill from the last position
             for (int i = rows - 1; i >= 0; i--) {
                 if (i > 0) {
-                    // Store the last element of the current row
-                    // This is to use in the first column of the next row
-                    previousRowLast = mat[i - 1][cols - 1];
+                    // Store the last element of the previous row
+                    // This is to use in the first column of the current row
+                    previousRowLastElement = mat[i - 1][cols - 1];
                 }
                 for (int j = cols - 1; j >= 0; j--) {
                     if (j > 0) {
-                        // Move the previous column's element to the current column's element location
+                        // In the current row, move the previous column's element
+                        // to the current column's element location
                         mat[i][j] = mat[i][j - 1];
                     } else {
-                        mat[i][j] = previousRowLast;
+                        // If the position is 0th column,
+                        // replace with the last element of the previous row
+                        mat[i][j] = previousRowLastElement;
                     }
                 }
             }
-            // Store the previous row's last element into the current row's first element
+            // Store the last element of the matrix to the 0th position
+            // This is the original element which was displaced to start the right shift of elements
             mat[0][0] = lastElement;
         }
 
