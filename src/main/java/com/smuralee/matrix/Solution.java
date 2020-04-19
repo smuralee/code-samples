@@ -83,6 +83,8 @@ public class Solution {
         int cols = mat[0].length;
 
         // Building a new transpose matrix
+        // The row count of original matrix will be the column count here
+        // The column count of the original matrix will be the row count here
         int[][] tMat = new int[cols][rows];
 
         // Swap the values
