@@ -1,0 +1,8 @@
+site_name: 'Data structures and Algorithms'
+site_description: 'Provides an explanation for the DSA examples in the project'
+site_author: 'Suraj Muraleedharan'
+docs_dir: 'docs'
+repo_name: 'smuralee/dsa-samples'
+repo_url: 'https://github.com/smuralee/dsa-samples'
+theme:
+  name: material
