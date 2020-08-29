@@ -6,5 +6,9 @@ repo_name: 'smuralee/dsa-samples'
 repo_url: 'https://github.com/smuralee/dsa-samples'
 nav:
   - Home: index.md
+  - Data Structures:
+      - Matrix: data-sctructures/matrices.md
+  - Algorithms:
+  - Mathematics:
 theme:
   name: material

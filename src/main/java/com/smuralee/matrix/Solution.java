@@ -13,7 +13,7 @@ public class Solution {
      * For odd number of elements [5], centre is untouched [2 flips]<br/>
      * <br/>
      * The loop on the row will be (int i = 1; i <= row.length / 2; i++)<br/>
-     * Initializing with i=1 since we need the index is, row.length -1<br/>
+     * Initializing with i=1 since we need the index as, row.length -1<br/>
      * </p>
      *
      * @param mat - Matrix for horizontal flip
